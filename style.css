@@ -1,0 +1,126 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(Montserrat/Montserrat-Italic-VariableFont_wght.ttf);
+}
+
+#container{
+    /* border: 1px solid black; */
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items:center  ;
+    box-shadow: 0px 5px 10px slategray;
+    font-family: Montserrat;
+}
+
+/* panneau de controle */
+header{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+}
+
+#controlsButtons{
+    display: flex;
+    justify-content: space-between;
+    min-width: 400px;
+    flex-wrap: wrap;   
+
+}
+
+
+#play{
+    width: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#back, #next{
+    width: 20%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#lowerVolume, #higherVolume{
+    width: 21%;
+}
+
+/* titre en cours de lecture */
+#player{
+width: 100%;
+}
+#artist{
+    margin-bottom: 7.5px;
+}
+#title{
+    margin-top:7.5px ;
+}
+
+
+#progress{
+    width: 100%;
+}
+
+
+
+/* research field  */
+#researchBox{
+margin-top: 30px;
+margin-bottom: 20px;
+
+display: flex;
+width: 100%;
+flex-direction:row;
+justify-content: center;
+}
+
+#searchfield{
+    min-width:80%
+}
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* links(nav) */
+
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    width: 80%;
+    border: 1px solid;
+}
+
+
+nav>a{
+    border-bottom: 1px solid;
+    text-decoration: none ;
+}
+
+nav> a:last-child{
+    border-bottom: 0px;
+}
+
+/* tracks container */
+#tracksDisplay{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* all covers */
+.covers{
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* media quieries */
+@media only screen and (min-width: 600px) {
+
+}
