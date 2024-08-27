@@ -29,7 +29,6 @@ header{
 
 }
 
-
 #play{
     width: 40%;
     margin-top: 10px;
@@ -55,7 +54,6 @@ width: 100%;
 #title{
     margin-top:7.5px ;
 }
-
 
 #progress{
     width: 100%;
@@ -115,11 +113,16 @@ nav> a:last-child{
 
 /* all covers */
 .covers{
-    border: 1px solid;
+    box-shadow: 0px 5px 10px slategray;
     margin: 10px;
     padding: 10px;
+    border-radius: 2px;
+
 }
 
+.covers:hover{
+box-shadow: 0px 2px 5px rgb(112, 183, 253); 
+}
 /* media quieries */
 @media only screen and (min-width: 600px) {
 
