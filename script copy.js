@@ -58,7 +58,7 @@ const mediaPlayer = new Audio();
 const playButton = document.getElementById("play");
 var displayArtist = document.getElementById("artist")
 var displayTitle = document.getElementById("title");
-var filePath = "";
+var filePathAudio = "";
 // var audioAttribut = document.getElementById("audioTag").src
 let isPlayed = false;
 //pour changer de musique
@@ -68,8 +68,8 @@ function playAndPause(){
     
         if (isPlayed === false) {
             //cas ou la musique n'est pas lancée
-            filePath = "audio/"+tabPlaylist[index].file;
-            mediaPlayer.src = filePath;
+            filePathAudio = "audio/"+tabPlaylist[index].file;
+            mediaPlayer.src = filePathAudio;
             mediaPlayer.play();
     
             isPlayed = true;
@@ -101,7 +101,7 @@ function nextFunction(){
     playAndPause(); // call playAndPause to play the new song
     playButton.click
     console.log(index)
-    console.log(filePath)
+    console.log(filePathAudio)
      
 
 }
