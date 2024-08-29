@@ -11,7 +11,7 @@
     align-items:center  ;
     box-shadow: 0px 5px 10px slategray;
     font-family: Montserrat;
-    background-color: #f6f4f0;
+    background-color: #fbe2ce;
 }
 
 /* panneau de controle */
@@ -40,6 +40,7 @@ header{
     width: 20%;
     margin-top: 10px;
     margin-bottom: 10px;
+
 }
 
 #lowerVolume, #higherVolume{
@@ -120,6 +121,7 @@ nav> a:last-child{
     margin: 10px;
     padding: 10px;
     border-radius: 2px;
+    background-color: azure;
 
 }
 

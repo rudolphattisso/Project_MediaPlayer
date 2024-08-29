@@ -22,8 +22,8 @@ let tabPlaylist = [
 
     },
     {
-        title: "Hold On a Minute",
         author: "Silent Partner",
+        title: "Hold On a Minute",
         file: "Hold_On_a_Minute.mp3",
         image: "4.jpg"
 
@@ -51,11 +51,22 @@ let tabPlaylist = [
 
     },
 
+    {
+        author: "Silent Patner",
+        title: "Blue Skies",
+        file: "Blue_Skies.mp3",
+        image: "1.jpg"
+
+    },
+
 ]
 
 // mon lecteur audio: mediaplayer
 const mediaPlayer = new Audio();
 const playButton = document.getElementById("play");
+
+
+
 var displayArtist = document.getElementById("artist")
 var displayTitle = document.getElementById("title");
 var filePathAudio = "";
@@ -66,21 +77,20 @@ let isPlayed = false;
 let index = 0
 
 function playAndPause() {
-
+    
     if (isPlayed === false) {
         //cas ou la musique n'est pas lancée
         filePathAudio = "audio/" + tabPlaylist[index].file;
         mediaPlayer.src = filePathAudio;
         mediaPlayer.play();
         //affichage des innfos de la piste audio
-        displayArtist.innerHTML=tabPlaylist[index].author
-        displayTitle.innerHTML=tabPlaylist[index].title
+        displayArtist.innerHTML = tabPlaylist[index].author
+        displayTitle.innerHTML = tabPlaylist[index].title
         isPlayed = true;
         playButton.innerHTML = "&#10074;&#10074";
         console.log(isPlayed);
         
         //changement de symbole
-        
         
     } else {
         mediaPlayer.pause();
@@ -91,37 +101,53 @@ function playAndPause() {
     //pour tester 
     console.log(displayArtist);
     console.log(displayTitle);
-    
+    tic();
 };
 
+function updateTrackInfo() {
+    const tracksDisplay = document.getElementById("tracksDisplay");
+    //création du tableau
+    const covers = tracksDisplay.querySelectorAll(".covers");
+
+    for (let index = 0; index < covers.length; index++) {
+        const cover = covers[index];
+        cover.addEventListener("click", e => {
+            git
+            mediaPlayer.src = "audio/"+ tabPlaylist[index].file;
+            mediaPlayer.play
+            console.log(mediaPlayer.src);
+            //
+        });
+  
+        //   const titleElement = cover.querySelector(".titleTrack");
+        //   const artistElement = cover.querySelector(".artisteTrack");
+
+        //   titleElement.textContent = tabPlaylist[index].title;
+        //   artistElement.textContent = tabPlaylist[index].author;
+    }
+}
+updateTrackInfo();
+
 playButton.addEventListener("click", playAndPause);
-
-
-
 const nextButton = document.getElementById("next");
 const backButton = document.getElementById("back");
 
 
 //logique des boutons next et back
 function nextFunction() {
-    index = (index + 1) % tabPlaylist.length; // je ne comprends pas encore bien son utilité mais ça marche; à éclaircir
-    playAndPause();
-    playButton.click;
-    console.log(index);
-    console.log(filePathAudio);
 
-
-}
-function backFunction() {
-    if (index != 0) {
-        index = (index - 1) % tabPlaylist.length;
+    if (index < tabPlaylist.length - 1) {
+        index += 1
+        isPlayed = false
         playAndPause();
-        playButton.click // pourquoi ça ne marche pas?
-        console.log(index)
-        console.log(filePathAudio)
-    } else {
-        playAndPause
-        
+    }
+}
+
+function backFunction() {
+    if (index > 0) {
+        index -= 1;
+        isPlayed = false
+        playAndPause();
     }
 
 }
@@ -132,52 +158,85 @@ backButton.addEventListener("click", backFunction);
 //logique boutons volume
 const lowerVolumeButton = document.getElementById("lowerVolume");
 const higherVolumeButton = document.getElementById("higherVolume");
+const sliderVolumeButton = document.getElementById("volume");
 
-mediaPlayer.volume = 0.5
-
+mediaPlayer.volume = 0.5;
 
 function addVolume() {
-    if (0 <= mediaPlayer.volume && mediaPlayer.volume <= 1) {
+    console.log(mediaPlayer.volume)
+    if (mediaPlayer.volume < 0.9) {
 
-        mediaPlayer.volume += 0.1
-    } else {
+        mediaPlayer.volume += 0.1;
+        //lier slider au bouton volume à sa nouvelle valeur
+        sliderVolumeButton.value = Math.round(mediaPlayer.volume * 10);
+        console.log(sliderVolumeButton.value)
 
-    };
+    } else if (mediaPlayer.volume >= 0.9) {
+        mediaPlayer.volume = 1;
+    }
 
 };
 
 function removeVolume() {
-    if (0 <= mediaPlayer.volume && mediaPlayer.volume <= 1) {
-
+    console.log(mediaPlayer.volume)
+    if (0.1 < mediaPlayer.volume) {
         mediaPlayer.volume -= 0.1
-    } else {
+        //lier slider au bouton volume à sa nouvelle valeur
+        sliderVolumeButton.value = Math.round(mediaPlayer.volume * 10);
 
-    };
+    } else if (mediaPlayer.volume <= 0.1) {
+        mediaPlayer.volume = 0;
+
+    }
 
 };
 
-
 higherVolumeButton.addEventListener("click", addVolume);
 lowerVolumeButton.addEventListener("click", removeVolume);
-//correction revoir codes erreurs affichés dans la console.
 
 
-const sliderVolumeButtonn = document.getElementById("volume");
-console.log(sliderVolumeButtonn.ariaValueNow);
+sliderVolumeButton.addEventListener("input", e => {
+
+    mediaPlayer.volume = sliderVolumeButton.value / 10;
+})
 
 
-function updateTrackInfo() {
-    const tracksDisplay = document.getElementById("tracksDisplay");
-    const covers = tracksDisplay.querySelectorAll(".covers");
-  
-    for (let index = 0; index < covers.length; index++) {
-      const cover = covers[index];
-      const titleElement = cover.querySelector(".titleTrack");
-      const artistElement = cover.querySelector(".artisteTrack");
-  
-      titleElement.textContent = tabPlaylist[index].title;
-      artistElement.textContent = tabPlaylist[index].author;
+//fonction qui fait évoluer le slider de progression de la chanson;
+const progressSlider = document.getElementById("progress");
+let durationMedia = mediaPlayer.duration;
+let sliderProgressVAlue = progressSlider.value
+
+console.log("quel est le statut :" + isPlayed)
+
+function tic() {
+    if (isPlayed != false) {
+        setTimeout(function () {
+            console.log(mediaPlayer.currentTime);
+            progressSlider.value = (mediaPlayer.currentTime * 100) / mediaPlayer.duration;
+            tic();
+        }, 1000);
+
+        console.log("quel est le statut aorès set time out :" + isPlayed)
     }
-  }
+};
+
+progressSlider.addEventListener("input", e => {
+    mediaPlayer.currentTime = mediaPlayer.duration * progressSlider.value / 100
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
