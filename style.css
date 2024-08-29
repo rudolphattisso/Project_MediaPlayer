@@ -6,6 +6,7 @@
 #container{
     /* border: 1px solid black; */
     margin: 50px;
+    padding:15px;
     display: flex;
     flex-direction: column;
     align-items:center  ;
@@ -68,7 +69,6 @@ width: 100%;
 #researchBox{
 margin-top: 30px;
 margin-bottom: 20px;
-
 display: flex;
 width: 100%;
 flex-direction:row;
@@ -120,15 +120,69 @@ nav> a:last-child{
     box-shadow: 0px 5px 10px slategray;
     margin: 10px;
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 3%;
     background-color: azure;
 
 }
 
 .covers:hover{
 box-shadow: 0px 2px 5px rgb(112, 183, 253); 
+transform: scale(1.12);
 }
-/* media quieries */
-@media only screen and (min-width: 600px) {
+
+.titleTrack{
+font-size: 13px;
+font-weight: bold;
+}
+
+.artisteTrack{
+font-size: 12px;
+font : italic;
 
 }
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+main{
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#player{
+    width: 50%;
+    justify-content: space-around;
+    align-content: center;
+
+    }
+
+
+    #progress{
+        width: 100%;
+    }
+    
+    /* research field  */
+    #researchBox{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 50%;
+    flex-direction:row;
+    justify-content: center;
+    }
+    
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+

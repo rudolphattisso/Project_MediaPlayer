@@ -110,23 +110,40 @@ function updateTrackInfo() {
     const covers = tracksDisplay.querySelectorAll(".covers");
 
     for (let index = 0; index < covers.length; index++) {
+        //création du tableau cover
         const cover = covers[index];
         cover.addEventListener("click", e => {
-            git
             mediaPlayer.src = "audio/"+ tabPlaylist[index].file;
-            mediaPlayer.play
+            isPlayed=true;
+            mediaPlayer.play();
             console.log(mediaPlayer.src);
             //
         });
   
-        //   const titleElement = cover.querySelector(".titleTrack");
-        //   const artistElement = cover.querySelector(".artisteTrack");
-
+        
         //   titleElement.textContent = tabPlaylist[index].title;
         //   artistElement.textContent = tabPlaylist[index].author;
     }
 }
 updateTrackInfo();
+
+const titleElement = document.getElementsByClassName("titleTrack");
+const artistElement = document.getElementsByClassName("artisteTrack");
+
+// function lengthCoverTitles(){
+//     for(let i = 0; i> tabPlaylist.length; i++){
+//         let lengthTitles= titleElement;
+//         if (tabPlaylist[i].title.length > 12) {
+//             titleElement[i].innerHTML = tabPlaylist[i].title.slice(0, 12) + "<br>" +  tabPlaylist[i].title.slice(12)
+//         }
+//         if (tabPlaylist[i].author.length > 12) {
+//             artistElement[i].innerHTML = tabPlaylist[i].author.slice(0, 12) + "<br>" +  tabPlaylist[i].author.slice(12)
+//         };
+           
+//     }
+// }
+// lengthCoverTitles();
+
 
 playButton.addEventListener("click", playAndPause);
 const nextButton = document.getElementById("next");
@@ -176,6 +193,8 @@ function addVolume() {
     }
 
 };
+
+
 
 function removeVolume() {
     console.log(mediaPlayer.volume)
