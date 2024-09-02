@@ -29,7 +29,9 @@ header{
     min-width: 400px;
     flex-wrap: wrap;   
     
-
+}
+#volume{
+width: 50%
 }
 
 #play{
@@ -37,6 +39,11 @@ header{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+h3{
+    font-weight : normal;
+}
+
 #back, #next{
     width: 20%;
     margin-top: 10px;
@@ -95,12 +102,14 @@ nav{
     justify-content:center ;
     width: 80%;
     border: 1px solid;
+    
 }
 
 
 nav>a{
     border-bottom: 1px solid;
     text-decoration: none ;
+    padding:5px
 }
 
 nav> a:last-child{
@@ -142,6 +151,10 @@ font : italic;
 }
 
 
+
+
+
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 main{
@@ -149,8 +162,25 @@ main{
     align-items: flex-start;
 }
 
+header{
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+} 
+
+#controlsButtons{
+    width:100%
+}
+#artist{
+ font-size: 17px;
+}
+#title{
+    font-size: 15px;
+}
 #player{
-    width: 50%;
+    width: 40%;
     justify-content: space-around;
     align-content: center;
 
@@ -164,25 +194,64 @@ main{
     /* research field  */
     #researchBox{
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     display: flex;
-    width: 50%;
+    width: 40%;
     flex-direction:row;
     justify-content: center;
+    align-self: flex-end;
+    
     }
     
 
-
+#links{
+    width: 130px;
+    font-size: 15px;
 }
+
+
+
+
+
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
+header{
+    justify-content: space-between;
 }
+    
+#controlsButtons{
+    width: 25%;
+    min-width: 0px;
+}
+
+#player {
+    width: 27%;
+  
+}
+
+#researchBox{
+
+    width: 25%;
+    align-self: center;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 
 }
-
