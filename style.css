@@ -3,90 +3,96 @@
     src: url(Montserrat/Montserrat-Italic-VariableFont_wght.ttf);
 }
 
-#container{
+#container {
     /* border: 1px solid black; */
     margin: 50px;
-    padding:15px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items:center  ;
+    align-items: center;
     box-shadow: 0px 5px 10px slategray;
     font-family: Montserrat;
     background-color: #fbe2ce;
 }
 
 /* panneau de controle */
-header{
+header {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 100%;
     align-items: center;
 }
 
-#controlsButtons{
+#controlsButtons {
     display: flex;
     justify-content: space-between;
-    min-width: 400px;
-    flex-wrap: wrap;   
-    
-}
-#volume{
-width: 50%
+    min-width: 100px;
+    flex-wrap: wrap;
+    width: 100%;
+
 }
 
-#play{
+#volume {
+    width: 50%
+}
+
+#play {
     width: 40%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-h3{
-    font-weight : normal;
+h2 {
+    font-weight: normal;
 }
 
-#back, #next{
+#back,
+#next {
     width: 20%;
     margin-top: 10px;
     margin-bottom: 10px;
 
 }
 
-#lowerVolume, #higherVolume{
+#lowerVolume,
+#higherVolume {
     width: 21%;
 }
 
 /* titre en cours de lecture */
-#player{
-width: 100%;
-}
-#artist{
-    margin-bottom: 7.5px;
-}
-#title{
-    margin-top:7.5px ;
+#player {
+    width: 100%;
 }
 
-#progress{
+#artist {
+    margin-bottom: 7.5px;
+}
+
+#title {
+    margin-top: 7.5px;
+}
+
+#progress {
     width: 100%;
 }
 
 
 
 /* research field  */
-#researchBox{
-margin-top: 30px;
-margin-bottom: 20px;
-display: flex;
-width: 100%;
-flex-direction:row;
-justify-content: center;
+#researchBox {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
 }
 
-#searchfield{
-    min-width:80%
+#searchfield {
+    min-width: 80%
 }
 
-main{
+main {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -96,36 +102,36 @@ main{
 
 /* links(nav) */
 
-nav{
+nav {
     display: flex;
     flex-direction: column;
-    justify-content:center ;
+    justify-content: center;
     width: 80%;
     border: 1px solid;
-    
+
 }
 
 
-nav>a{
+nav>a {
     border-bottom: 1px solid;
-    text-decoration: none ;
-    padding:5px
+    text-decoration: none;
+    padding: 5px
 }
 
-nav> a:last-child{
+nav>a:last-child {
     border-bottom: 0px;
 }
 
 /* tracks container */
-#tracksDisplay{
+#tracksDisplay {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
+
 }
 
 /* all covers */
-.covers{
+.covers {
     box-shadow: 0px 5px 10px slategray;
     margin: 10px;
     padding: 10px;
@@ -134,19 +140,19 @@ nav> a:last-child{
 
 }
 
-.covers:hover{
-box-shadow: 0px 2px 5px rgb(112, 183, 253); 
-transform: scale(1.12);
+.covers:hover {
+    box-shadow: 0px 2px 5px rgb(112, 183, 253);
+    transform: scale(1.12);
 }
 
-.titleTrack{
-font-size: 13px;
-font-weight: bold;
+.titleTrack {
+    font-size: 13px;
+    font-weight: bold;
 }
 
-.artisteTrack{
-font-size: 12px;
-font : italic;
+.artisteTrack {
+    font-size: 12px;
+    font: italic;
 
 }
 
@@ -157,58 +163,61 @@ font : italic;
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-main{
-    flex-direction: row;
-    align-items: flex-start;
-}
+    main {
+        flex-direction: row;
+        align-items: flex-start;
+    }
 
-header{
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    header {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
 
-} 
+    }
 
-#controlsButtons{
-    width:100%
-}
-#artist{
- font-size: 17px;
-}
-#title{
-    font-size: 15px;
-}
-#player{
-    width: 40%;
-    justify-content: space-around;
-    align-content: center;
+    #controlsButtons {
+        width: 100%
+    }
+
+    #artist {
+        font-size: 17px;
+    }
+
+    #title {
+        font-size: 15px;
+    }
+
+    #player {
+        width: 40%;
+        justify-content: space-around;
+        align-content: center;
 
     }
 
 
-    #progress{
+    #progress {
         width: 100%;
     }
-    
+
     /* research field  */
-    #researchBox{
-    margin-top: 30px;
-    margin-bottom: 0px;
-    display: flex;
-    width: 40%;
-    flex-direction:row;
-    justify-content: center;
-    align-self: flex-end;
-    
+    #researchBox {
+        margin-top: 30px;
+        margin-bottom: 0px;
+        display: flex;
+        width: 40%;
+        flex-direction: row;
+        justify-content: center;
+        align-self: flex-end;
+
     }
-    
 
-#links{
-    width: 130px;
-    font-size: 15px;
+
+    #links {
+        width: 130px;
+        font-size: 15px;
+    }
 }
-
 
 
 
@@ -217,41 +226,27 @@ header{
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
-header{
-    justify-content: space-between;
-}
-    
-#controlsButtons{
-    width: 25%;
-    min-width: 0px;
-}
+    header {
+        justify-content: space-between;
+    }
 
-#player {
-    width: 27%;
-  
-}
+    #controlsButtons {
+        width: 25%;
+        min-width: 0px;
+    }
 
-#researchBox{
+    #player {
+        width: 27%;
 
-    width: 25%;
-    align-self: center;
+    }
+
+    #researchBox {
+
+        width: 25%;
+        align-self: center;
 
     }
 
 
 }
 
-
-
-
-
-
-
-
-
-
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-}

@@ -13,25 +13,26 @@
    
     <section id="container">
         <header>
-            <span id="controlsButtons">
+            <div id="controlsButtons">
                 <button id="back">&#8592;</button>
                 <button id="play">&#9658;</button>
                 <button id="next">&#8594;</button>
                 <button id="lowerVolume">&#128265;</button>
-                <input type="range" min="0" max="10" value="5" id="volume">
+                <input type="range" min="0" max="10" value="5" aria-label="volume slider" id="volume">
                 <button id="higherVolume">&#128266;</button>
-            </span>
-
-            <span id="player">
+            </div>
+            
+            <div id="player">
                 <h1 id="artist">ZB</h1>
-                <h3 id="title">OUB</h3>
-                <input type="range" id="progress" min="0" max="100" value="0">
-            </span>
+                <h2 id="title">OUB</h2>
 
-            <span id="researchBox">
+                <input type="range" id="progress" min="0" max="100" value="0" aria-label="media player progress Bar">
+            </div>
+
+            <div id="researchBox">
                 <button id="searchButton">&#128269;</button>
                 <input type="text" placeholder="recherche" id="searchfield">
-            </span>
+            </div>
         </header>
 
         <main>
@@ -42,50 +43,50 @@
 
             </nav>
 
-            <span id="tracksDisplay">
+            <div id="tracksDisplay">
 
-                <span class="covers" id="cover1">
+                <div class="covers" id="cover1">
                     <img src="pochettes/150/1.jpg" alt="">
                     <p class="titleTrack" id="">Blue Skies</p>
                     <p class="artisteTrack" id="">Silent Partner</p>
-                </span>
-                <span class="covers" id="cover2">
+                </div>
+                <div class="covers" id="cover2">
                     <img src="pochettes/150/2.jpg" alt="">
                     <p class="titleTrack" id="">Cartoon Hoedown</p>
                     <p class="artisteTrack" id="">Media Right Production</p>
-                </span>
-                <span class="covers" id="cover3">
+                </div>
+                <div class="covers" id="cover3">
                     <img src="pochettes/150/3.jpg" alt="">
                     <p class="titleTrack" id="">Earthy Crust</p>
                     <p class="artisteTrack" id="">Jingle Punks</p>
-                </span>
-                <span class="covers" id="cover4">
+                </div>
+                <div class="covers" id="cover4">
                     <img src="pochettes/150/4.jpg" alt="">
                     <p class="titleTrack" id="">Hold On a Minute</p>
                     <p class="artisteTrack" id="">Silent Partner</p>
-                </span>
-                <span class="covers" id="cover5">
+                </div>
+                <div class="covers" id="cover5">
                     <img src="pochettes/150/5.jpg" alt="">
                     <p class="titleTrack" id="">John Dunbar <br>Theme</p>
                     <p class="artisteTrack" id="">City of Prague<br>Philharmonic</p>
-                </span>
-                <span class="covers" id="cover6">
+                </div>
+                <div class="covers" id="cover6">
                     <img src="pochettes/150/6.jpg" alt="">
                     <p class="titleTrack" id="">Stay with You</p>
                     <p class="artisteTrack" id="">Silent Partner</p>
-                </span>
-                <span class="covers" id="cover7">
+                </div>
+                <div class="covers" id="cover7">
                     <img src="pochettes/150/7.jpg" alt="">
                     <p class="titleTrack" id="">Symphony No. 5<br>(by Beethoven)</p>
                     <p class="artisteTrack" id="">Beethoven</p>
-                </span>
-                <span class="covers" id="cover8">
+                </div>
+                <div class="covers" id="cover8">
                     <img src="pochettes/150/1.jpg" alt="">
                     <p class="titleTrack" id="">Blue Skies</p>
                     <p class="artisteTrack" id="">Silent Patner</p>
-                </span>
+                </div>
 
-            </span>
+            </div>
 
         </main>
     </section>

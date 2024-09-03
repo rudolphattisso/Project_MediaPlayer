@@ -104,6 +104,7 @@ function playAndPause() {
     tic();
 };
 
+
 function updateTrackInfo() {
     const tracksDisplay = document.getElementById("tracksDisplay");
     //création du tableau
@@ -117,18 +118,16 @@ function updateTrackInfo() {
             isPlayed=true;
             mediaPlayer.play();
             console.log(mediaPlayer.src);
-            //
+            
+              displayArtist.textContent = tabPlaylist[index].title;
+              displayTitle.textContent = tabPlaylist[index].author;
         });
   
         
-        //   titleElement.textContent = tabPlaylist[index].title;
-        //   artistElement.textContent = tabPlaylist[index].author;
     }
 }
 updateTrackInfo();
 
-const titleElement = document.getElementsByClassName("titleTrack");
-const artistElement = document.getElementsByClassName("artisteTrack");
 
 // function lengthCoverTitles(){
 //     for(let i = 0; i> tabPlaylist.length; i++){
